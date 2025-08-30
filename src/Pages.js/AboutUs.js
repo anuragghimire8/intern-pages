@@ -44,7 +44,7 @@ const AboutUs = () => {
     <div className='bg-green-100 lg:p-[85px] sm:py-[80px] p-[80px]'>
     <div className='rounded-full w-[100px] lg:mt-5   '><img className='rounded-full' src="/anurag.jpg"/> 
     </div>
-    <p className='font-bold text-2xl'>Anurag Ghimire</p>
+    <p className='font-bold text-2xl'>Anurag Ghimire asdasdasdasd</p>
    
     </div>
    <div className=' bg-green-100 col-span-3 py-[85px]'>
