@@ -3,7 +3,7 @@ name: Build and Deploy bank app
 on:
   push:
     tags:
-      - "dev"
+      - "*"
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -25,7 +25,7 @@ jobs:
 
     - name: Build and Push Docker Image
       run: |
-        BRANCH_NAME=${{ github.ref_name }}
+        TAG=${{ github.ref_name }}
         docker build -t react -f Dockerfile-prod .
-        docker tag react ${{ secrets.ECR_REPOSITORY_URI }}/react:$BRANCH_NAME
-        docker push ${{ secrets.ECR_REPOSITORY_URI }}/react:$BRANCH_NAME
+        docker tag react ${{ secrets.ECR_REPOSITORY_URI }}/react:$TAG
+        docker push ${{ secrets.ECR_REPOSITORY_URI }}/react:$TAG
