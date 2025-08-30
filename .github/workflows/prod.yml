@@ -24,10 +24,10 @@ jobs:
         aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin ${{ secrets.ECR_REPOSITORY_URI }}
 
     - name: Build and Push Docker Image
-      env:
-        TAG: ${{ github.ref_name }}
+    
       run: |
-        echo "Tag is $TAG"
+        TAG=${{ github.ref_name }}
+      
         docker build -t react -f Dockerfile-prod .
         docker tag react ${{ secrets.ECR_REPOSITORY_URI }}/react:$TAG
         docker push ${{ secrets.ECR_REPOSITORY_URI }}/react:$TAG
