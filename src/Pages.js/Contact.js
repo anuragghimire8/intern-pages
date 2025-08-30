@@ -17,7 +17,7 @@ const Contact = () => {
     </div>
     <br></br>
     <span className='  text-2xl font-bold  '>Iam a <span className='text-4xl bg-gradient-to-r from-blue-500 to-transparent'>Frontend Developer</span></span>
-    <p className='ml-[150px] text-xl flex gap-1 font-bold'><p>currently working as a intern in </p><span className=' text-5xl text-blue-800  '><p className='animate-bounce bg-gradient-to-r from-indigo-200 ...'>ONVIRO TECHNOLOGY.</p></span></p>
+    <p className='ml-[150px] text-xl flex gap-1 font-bold'><p>currently asdasdsadasdasdasdasdasdasdasdas as a intern in </p><span className=' text-5xl text-blue-800  '><p className='animate-bounce bg-gradient-to-r from-indigo-200 ...'>ONVIRO TECHNOLOGY.</p></span></p>
     
       </div>
       </Layout>
