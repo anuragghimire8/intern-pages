@@ -1,0 +1,31 @@
+name: Build and Deploy bank app
+
+on:
+  push:
+    tags:
+      - "*"
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v3
+
+    - name: AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: eu-central-1
+
+    - name: Login to ECR
+      run: |
+        aws ecr get-login-password --region eu-central-1 | docker login --username AWS --password-stdin ${{ secrets.ECR_REPOSITORY_URI }}
+
+    - name: Build and Push Docker Image
+      run: |
+        TAG=${{ github.ref_name }}
+        docker build -t react -f Dockerfile-prod .
+        docker tag react ${{ secrets.ECR_REPOSITORY_URI }}/react:$TAG
+        docker push ${{ secrets.ECR_REPOSITORY_URI }}/react:$TAG
