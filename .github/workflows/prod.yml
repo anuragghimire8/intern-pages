@@ -27,5 +27,5 @@ jobs:
       run: |
         TAG=${GITHUB_REF#refs/tags/}
         docker build -t react -f Dockerfile-prod .
-        docker tag react ${{ secrets.ECR_REPOSITORY_URI }}/react:$TAG
+        docker tag react:latest ${{ secrets.ECR_REPOSITORY_URI }}/react:$TAG
         docker push ${{ secrets.ECR_REPOSITORY_URI }}/react:$TAG
