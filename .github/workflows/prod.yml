@@ -26,6 +26,7 @@ jobs:
     - name: Build and Push Docker Image
       run: |
         TAG=${GITHUB_REF#refs/tags/}
+        echo "Tag is $TAG"
         docker build -t react -f Dockerfile-prod .
         docker tag react ${{ secrets.ECR_REPOSITORY_URI }}/react:$TAG
         docker push ${{ secrets.ECR_REPOSITORY_URI }}/react:$TAG
