@@ -2,7 +2,7 @@ name: Build and Deploy bank app
 
 on:
   push:
-    tags:
+     branches:
       - "dev"
 jobs:
   build-deploy:
