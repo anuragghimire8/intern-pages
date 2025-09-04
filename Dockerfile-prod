@@ -1,5 +1,5 @@
 # Stage 1: Build the React app
-FROM node:18-alpine AS build
+FROM 524291824362.dkr.ecr.eu-central-1.amazonaws.com/node:18-alpine AS build
 
 WORKDIR /app
 COPY package*.json ./
