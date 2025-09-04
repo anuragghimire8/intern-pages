@@ -16,7 +16,7 @@ phases:
       - echo "Pushing the Docker image to ECR..."
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$IMAGE_REPO_NAME:$BRANCH_NAME
       - echo "Image pushed successfully!"
-        - echo "Fetching SSH private key..."
+      - echo "Fetching SSH private key..."
       - aws ssm get-parameter --name /cicd/ssh --with-decryption --query "Parameter.Value" --output text > /tmp/ssh-key.pem
       - chmod 600 /tmp/ssh-key.pem
 
