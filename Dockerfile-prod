@@ -9,7 +9,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2: Serve the app with Nginx
-FROM nginx:stable-alpine
+FROM 524291824362.dkr.ecr.eu-central-1.amazonaws.com/nginx:stable-alpine
 
 # Remove default Nginx website
 RUN rm -rf /usr/share/nginx/html/*
