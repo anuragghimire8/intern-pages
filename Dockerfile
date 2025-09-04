@@ -1,6 +1,6 @@
 FROM 524291824362.dkr.ecr.eu-central-1.amazonaws.com/node:18-alpine AS build
 WORKDIR /app
-COPY packages*.json ./
+COPY package*.json ./
 RUN npm install
 COPY . .
 RUN npm run build
