@@ -22,7 +22,7 @@ phases:
 
       - echo "Connecting to EC2 and deploying the new image..."
       - |
-        ssh -o StrictHostKeyChecking=no -i /tmp/ssh-key.pem ubuntu@3.72.77.241 << 'EOF'
+        ssh -o StrictHostKeyChecking=no -i /tmp/ssh-key.pem ubuntu@3.72.72.66 << 'EOF'
         echo "Connected to EC2"
         cd /home/ubuntu/intern
         docker-compose down
