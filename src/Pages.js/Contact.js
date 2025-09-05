@@ -6,7 +6,7 @@ const Contact = () => {
     <div className='bg-green-100 h-screen'>
       <Layout>
       <div className='mt-9 py-[90px] px-[250px]'>
-      <p className='text-4xl font-bold underline '>Contact Me:</p>
+      <p className='text-4xl font-bold underline '>Contact Me asdadasdas:</p>
       <div className='flex gap-1 justify-center '>
     <a href="https://github.com/anuragghimire8?tab=repositories"><img  className="lg:h-[150px] hover:scale-110 h-[255px] h-[25px]"src="/github.png"></img></a>
    
