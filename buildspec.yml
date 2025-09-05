@@ -8,7 +8,7 @@ phases:
   build:
     commands:
       - echo "Building the Docker image..."
-      - BRANCH_NAME=$(echo $CODEBUILD_WEBHOOK_HEAD_REF | sed "s/refs\/heads\///")
+      - BRANCH_NAME=$(echo $CODEBUILD_WEBHOOK_HEAD_REF | sed 's/refs\/heads\///')  # Extract the branch name
       - docker build -t intern .
       - docker tag intern $AWS_ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com/$IMAGE_REPO_NAME:$BRANCH_NAME
   post_build:
