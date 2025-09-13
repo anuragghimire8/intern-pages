@@ -14,9 +14,9 @@ phases:
       - echo Building the Docker image for branch $BRANCH_NAME...
       - docker build -t intern:latest -f Dockerfile-prod .  
       - echo Tagging the Docker image...
-      - docker tag intern:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$BRANCH_NAME
+      - docker tag intern:latest 524291824362.dkr.ecr.eu-central-1.amazonaws.com/build:main
 
   post_build:
     commands:
       - echo Pushing the Docker image...
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$BRANCH_NAME
+      - docker push 524291824362.dkr.eu-central-1.amazonaws.com/build:main
